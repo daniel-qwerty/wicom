@@ -1,0 +1,24 @@
+<div class="page-news-details-content solid-underline">
+    <a href="#">
+        <img alt="Generic placeholder image" src="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->note->NotImage; ?>" class="img-responsive" style="width: 100%;">
+    </a>
+    <h3><a href="#"><?= $this->note->NotTitle; ?></a></h3>
+    <ul class="comments-info solid-underline">
+        <li><i class="fa fa-calendar" aria-hidden="true"></i> <?= $this->note->NotDate?></li>
+        <li><i class="fa fa-user" aria-hidden="true"></i> <?= $this->note->NotUser; ?></li>
+
+    </ul>
+    <?= $this->note->NotDescription; ?>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,256 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Película que retrata nuestra sociedad, la realidad de las mujeres en Bolivia, la vida en nuestros barrios y la corrupción en algunas esferas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title><?= Configurations_Helper_Configuration::getInstance()->getKey('PAGE_TITLE'); ?></title>
+
+
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="mask-icon"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/safari-pinned-tab.svg"
+        color="#5bbad5">
+    <link rel="shortcut icon"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+        type="image/x-icon" />
+
+    <?PHP
+  Com_Helper_Style::getInstance()
+  ->addFile("Public/normalize.css")
+  ->addFile("Public/main.css")
+  ->addFile("Public/bootstrap.css")
+  ->addFile("Public/animate.min.css")
+  ->addFile("Public/font-awesome.css")
+  ->addFile("Public/owl.carousel.min.css")
+  ->addFile("Public/owl.theme.default.min.css")
+  ->addFile("Public/meanmenu.min.css")
+  ->addFile("Public/colorbox.css")
+  ->addFile("Public/preview.css")
+  ->addFile("Public/style.css")
+  ->addFile("Public/responsive.css")
+  ->addFile("Public/nivo-slider.css")
+  ->addFile("Public/magnific-popup.css")
+  ->addFile("Public/main.css")
+  ;
+
+
+  echo Com_Helper_Style::getInstance();
+
+
+  ?>
+
+</head>
+
+<body>
+    <div class="wrapper-area">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <!-- Header Area Start Here -->
+        <header>
+            <div class="header-style1-area">
+
+                <div class="main-header-area" id="sticker">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <div class="logo-area">
+                                    <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/es"><img
+                                            class="img-responsive"
+                                            src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo-3black.png"
+                                            alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area">
+                                    <nav>
+                                        <ul>
+                                            <?php Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area Start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul>
+                                            <?php Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area End -->
+            </div>
+        </header>
+        <!-- Header Area End Here -->
+        <div class="header-bennar-area">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-bennar-left">
+                            <h2><?= $this->page->PagName; ?></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-bennar-right">
+                            <ul>
+                                <li><a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/en">Home</a> /</li>
+                                <li><?= $this->page->PagName; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inner page Header Banner Area End Here -->
+        <div class="page-news-area section-space-b-less-30">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-9 col-md-9 col-sm-8 col-xs-12">
+                        <div class="inner-page-news-area">
+                            <div class="row">
+                                <?php Notes_Widget_News::getInstance()->setLan($this->lan)->renderNews(); ?>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-4 col-xs-12">
+                        <div class="sidebar">
+                            <div class="search-box hidden">
+                                <h3 class="sidebar-search-title">Search</h3>
+                                <div class="input-group stylish-input-group">
+                                    <input type="text" class="form-control" placeholder="Search here...">
+                                    <span class="input-group-addon">
+                                        <button type="submit">
+                                            <span class="glyphicon glyphicon-search"></span>
+                                        </button>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="recent-news-box">
+                                <h3 class="sidebar-title">
+                                    <?= Texts_Helper_Text::getInstance()->get($this->lan, "noticiasRecientesTitle")->TxtDescription; ?>
+                                </h3>
+                                <?php Notes_Widget_News::getInstance()->setLan($this->lan)->renderRecientes(); ?>
+                            </div>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Brand Area Start Here -->
+        <div class="brand-area">
+            <div class="container">
+                <div class="brand kon-carousel" data-loop="true" data-items="6" data-margin="30" data-autoplay="true"
+                    data-autoplay-timeout="10000" data-smart-speed="2000" data-dots="false" data-nav="true"
+                    data-nav-speed="false" data-r-x-small="2" data-r-x-small-nav="true" data-r-x-small-dots="false"
+                    data-r-x-medium="3" data-r-x-medium-nav="true" data-r-x-medium-dots="false" data-r-small="4"
+                    data-r-small-nav="true" data-r-small-dots="false" data-r-medium="5" data-r-medium-nav="true"
+                    data-r-medium-dots="false" data-r-large="6" data-r-large-nav="true" data-r-large-dots="false">
+                    <?php Gallery_Widget_Clientes::getInstance()->setLan($this->lan)->render(); ?>
+                </div>
+            </div>
+        </div>
+        <!-- Brand Area End Here -->
+        <!-- Footer Area Start Here -->
+        <?PHP Pages_Widget_Footer::getInstance()->render(); ?>
+        <!-- Footer Area End Here -->
+    </div>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+
+
+    <?php
+    Com_Helper_Script::getInstance()
+    ->addFile("Public/modernizr-2.8.3.min.js")
+    ->addFile("Public/jquery-1.12.0.min.js")
+    ->addFile("Public/bootstrap.min.js")
+    ->addFile("Public/owl.carousel.min.js")
+    ->addFile("Public/jquery.nivo.slider.js")
+    ->addFile("Public/home.js")
+    ->addFile("Public/jquery.meanmenu.min.js")
+    ->addFile("Public/wow.min.js")
+    ->addFile("Public/plugins.js")
+    ->addFile("Public/jquery.scrollUp.min.js")
+    ->addFile("Public/isotope.pkgd.js")
+    ->addFile("Public/jquery.counterup.min.js")
+    ->addFile("Public/waypoints.min.js")
+    ->addFile("Public/jquery.colorbox-min.js")
+    ->addFile("Public/main.js");
+
+    echo Com_Helper_Script::getInstance();
+    ?>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAmiJjq5DIg_K9fv6RE72OY__p9jz0YTMI"></script>
+
+    <script type="text/javascript">
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    function sendContact() {
+        var name = $('#contactForm #name').val();
+        var message = $('#contactForm #message').val();
+        var email = $('#contactForm #email').val();
+        var phone = $('#contactForm #phone').val();
+
+        if (name === "" || email === "" || message === "") {
+            //swal("", "Los campos marcados con (*) son obligatorios", "warning");
+            console.log("Por favor revise los datos del formulario !!!");
+        } else {
+
+            $.ajax({
+                type: "POST",
+                url: "http://www.barbarapelicula.com.bo/Service/Contact/Save",
+                data: {
+                    Name: name,
+                    Email: email,
+                    Phone: phone,
+                    Message: message
+                }
+            }).done(function(data) {
+                console.log("Exito");
+                // swal("", "Su mensaje fue enviado con exito", "success");
+                $('#contactForm #name').val("");
+                $('#contactForm #message').val("");
+                $('#contactForm #email').val("");
+                $('#contactForm #phone').val("");
+            }).error(function() {
+
+            });
+
+
+        }
+    }
+    </script>
+</body>
+
+
+
+
+
+</html>

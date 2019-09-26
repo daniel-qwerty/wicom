@@ -1,0 +1,179 @@
+<div class="formulario">
+    <div class="title">
+        <h2>Dashboard</h2>
+
+    </div>
+</div>
+<div class="clear"></div>
+<div class="dashboard">
+
+    <div class="icons">
+        <div id="main-wrapper">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel info-box panel-white">
+                        <div class="panel-body">
+                            <div class="info-box-stats">
+                                <p class="counter"><?= Tracking_Model_Tracking::getInstance()->count()[0]->number; ?></p>
+                                <span class="info-box-title">Visitas x mes</span>
+                            </div>
+                            <div class="info-box-icon">
+                                <i class="icon-users"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel info-box panel-white">
+                        <div class="panel-body">
+                            <div class="info-box-stats">
+                                <p class="counter"><?= Tracking_Model_Tracking::getInstance()->countUnique()[0]->number; ?></p>
+                                <span class="info-box-title">Visitas unicas x mes</span>
+                            </div>
+                            <div class="info-box-icon">
+                                <i class="icon-eye"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3 col-md-6">
+                    <div class="panel info-box panel-white">
+                        <div class="panel-body">
+                            <div class="info-box-stats">
+                                <p class="counter"><?= Contact_Model_Contact::getInstance()->countAll()[0]->number; ?></p>
+                                <span class="info-box-title">Mesajes recibidos</span>
+                            </div>
+                            <div class="info-box-icon">
+                                <i class="icon-envelope"></i>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row -->
+            <div class="row">
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-primary">
+                        <div class="panel-heading" style="height: 100px;">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-newspaper-o  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>NOTICIAS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/Admin/Notes">
+                            <div class="panel-footer">
+                                <span class="pull-left">Entrar</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading" style="height: 100px;">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-envelope-o  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>CONTACTO</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/Admin/Contact">
+                            <div class="panel-footer">
+                                <span class="pull-left">Entrar</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-yellow">
+                        <div class="panel-heading" style="height: 100px;">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-image  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>Clientes</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/Admin/Gallery">
+                            <div class="panel-footer">
+                                <span class="pull-left">Entrar</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-green">
+                        <div class="panel-heading" style="height: 100px;">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa fa-file-text  fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>TEXTOS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/Admin/Texts">
+                            <div class="panel-footer">
+                                <span class="pull-left">Entrar</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 col-md-6">
+                    <div class="panel panel-red">
+                        <div class="panel-heading" style="height: 100px;">
+                            <div class="row">
+                                <div class="col-xs-3">
+                                    <i class="fa fa-user fa-5x"></i>
+                                </div>
+                                <div class="col-xs-9 text-right">
+                                    <div>USUARIOS</div>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/Admin/Users">
+                            <div class="panel-footer">
+                                <span class="pull-left">Entrar</span>
+                                <span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+                                <div class="clearfix"></div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+
+
+            </div>
+
+
+
+            <!-- Main Wrapper -->
+
+            <div class="clear"></div>
+        </div>
+        <div class="clear"></div>
+
+    </div>

@@ -1,0 +1,63 @@
+<div class="col-xs-12 col-md-8">
+    <div class="container-fluid content-header-1">
+        <div class="row">
+            <!--    poner clase bg-note-$color        -->
+            <div
+                class="col-sm-10 content-header-1-title tag <?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>">
+                <h3><?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatAlias; ?></h3>
+            </div>
+            <div class="col-sm-2 content-header-1-options bg-blue-dark-tool">
+                <?php foreach ($this->category as $new) { ?>
+                    <a class="header-link"
+                       href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $new->CatId); ?>"><?= $new->CatAlias; ?></a>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid content-tool notas-items">
+        <div class="row">
+            <?php foreach ($this->notes as $new) { ?>
+                <div class="col-md-6 notas-item">
+                    <div class="square"
+                         style="background-image: linear-gradient(to bottom, rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, $this->categoryId); ?>, 0.0) 0%,rgba(<?= Categories_Helper_Category::getInstance()->getHexa($this->lan, $this->categoryId); ?>,0.0) 0%) , url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $new->NotImage; ?>);background-size:cover ">
+                        <div class="square square-hover bg-gray">
+
+                            <div class="content">
+
+                                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "notes/" . $this->categoryId); ?>"
+                                   class="tag bg-note-<?= Categories_Helper_Category::getInstance()->getId($this->lan, $this->categoryId)->CatClass; ?>"><?= Categories_Helper_Category::getInstance()->getId($this->lan, $new->NotCatId)->CatAlias; ?></a>
+                                <a class="notas-item-title black" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                                    <h3><?= $new->NotTitle; ?></h3>
+                                </a>
+                                <p>
+                                    <?= $new->NotResume; ?>
+                                </p>
+                                <span><i class="fa fa-calendar" style="margin: 10px"></i><?= $new->NotDate; ?></span>
+                            </div>
+
+
+                        </div>
+                    </div>
+                    <a class="notas-item-title2 white" href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "article/" . $new->NotId); ?>">
+                        <h3><?= $new->NotTitle; ?></h3>
+
+                    </a>
+
+                </div>
+            <?php } ?>
+        </div>
+        <div class="row hidden">
+            <a href="#" style="color: white">
+                <span>Cargar mas</span>
+                <span class="go-down">
+                    <i class="fa fa-angle-down icon-white"></i>
+                </span>
+            </a>
+        </div>
+        <div class="row">
+            <div class="col-xs-12">
+                <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderB(); ?>
+            </div>
+        </div>
+    </div>
+</div>

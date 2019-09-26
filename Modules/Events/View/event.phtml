@@ -1,0 +1,70 @@
+<div class="col-xs-12 col-md-8">
+
+    <div class="container-fluid content-header-1">
+        <div class="row">
+            <!--    poner clase bg-note-$color        -->
+            <div class="col-sm-4 content-header-1-title m_azul">
+                <h3><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtEventos")->TxtDescription ?></h3>
+            </div>
+            <div class="col-sm-8 content-header-1-options bg-blue-dark-tool">
+                <?php foreach ($this->category as $new) { ?>
+                    <a class="header-link"
+                       href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->CatId); ?>"><?= $new->CatName; ?></a>
+                   <?php } ?>
+            </div>
+        </div>
+    </div>
+
+    <section>
+
+        <div
+            data-slide-bg="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>"
+            class="swiper-slide" data-swiper-slide-index="1"
+            style="height: 550px; background-image: url(<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>); background-size: cover;">
+            <div class="pull-bottom">
+                klskds
+                <a href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "events/" . $new->EveCatId); ?>" class="tag bg-note-red"><?= CatEvents_Helper_Category::getInstance()->getId($this->lan, $this->events->EveCatId)->CatName; ?></a>
+                <h3><?= $this->events->EveTitle; ?></h3>
+                <span><i style="margin-right: 5px" class="fa fa-user"></i><?= $this->events->EveDate; ?></span>                
+            </div>
+        </div>
+
+
+    </section>
+    <div class="container-fluid  content-tool bg-white">
+        <div class="row event-body text-left">
+            <?= $this->events->EveContent; ?>
+            <?php if (!empty($this->events->EveVideo)) { ?>
+                <div class="col-ms-12">
+                    <p>
+                        <iframe width="100%" height="350" src="<?= $this->events->EveVideo; ?>" frameborder="0" allowfullscreen></iframe>
+                    </p>
+                </div>
+            <?php } ?>
+            <div class="col-sm-12" style="background: #999999;height: 2px; margin: 15px 0 20px;"></div>
+            <div class="col-sm-offset-3 col-sm-6">
+                <div class="addthis_inline_share_toolbox" data-url="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "/item/" . $this->events->EveId); ?>" data-title="<?=$this->events->EveTitle;?>" data-media="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?PHP echo $this->events->EveImage; ?>"></div>
+            </div>
+        </div>
+    </div>
+
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Comentarios:</h4>
+    <div class="container-fluid content-tool bg-white" style="margin-top: 15px; margin-bottom: 15px">
+        <div class="row">
+            <div class="fb-comments" data-href="<?PHP echo Com_Helper_Url::getInstance()->generateUrl($this->lan->LanCode, "item/" . $this->events->EveId); ?>" data-numposts="15"></div>
+        </div>
+    </div>
+    <h4 style="color:white;font-size: 22px; margin:25px 0 10px">Tambien te puede interesar:</h4>
+    <div class="container-fluid content-tool notas-items events-container">
+        <div class="row">  
+            <?php Events_Widget_ByCategory::getInstance()->setLan($this->lan)->setLimit(6)->setCategory($this->events->EveCatId)->render(); ?>
+
+            <div class="col-xs-12" style="padding: 0">
+                <?php Advertising_Widget_Ad::getInstance()->setType('F')->setLimit(1)->renderF(); ?>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-582dd089d1d08717"></script> 
+

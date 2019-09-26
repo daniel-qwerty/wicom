@@ -1,0 +1,36 @@
+
+<div class="tx-altenburger-team">
+
+    <section id="cv">
+        <header><h1 class="page-title"><?=$this->list->TeamNombre?> <span class="addon position location"><?=$this->list->TeamCargo?></span></h1></header>
+        <p class="intro hidden"><?=$this->list->TeamResumen?></p>
+        <div class="employee-img-wrapper">
+            <span data-picture="" data-alt="Massimo  Calderan, Partner, Zurich">
+                <!-- Mobile portrait SD -->
+                <span data-src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?=$this->list->TeamImage ?>" class="responsive"></span>
+                <!--<span data-src="typo3temp/_processed_/csm_vs_landscape_61540d616e.jpg" class="responsive"></span>-->
+                <!-- Mobile portrait HD -->
+                <span data-src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?=$this->list->TeamImage ?>" data-media="(-webkit-min-device-pixel-ratio: 2.0)" class="responsive"></span>
+                <!-- Tablet & desktop SD -->
+                <span data-src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?=$this->list->TeamImage ?>" data-media="(min-width: 400px)" class="responsive"></span>
+                <!-- Tablet & desktop HD -->
+                <span data-src="<?PHP echo Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?=$this->list->TeamImage ?>" data-media="(min-width: 400px) and (-webkit-min-device-pixel-ratio: 2.0)" class="responsive"><img alt="Massimo  Calderan, Partner, Zurich" src="uploads/tx_altenburgerteam/mc_landscape.jpg"></span>
+                <!-- Fallback content for non-JS browsers -->
+                <noscript>
+                    &lt;img src="../../../../uploads/tx_altenburgerteam/mc_portrait.jpg" alt="Melissa Gautschi, Partnerin, Zürich"&gt;
+                </noscript>
+            </span>
+        </div>
+        <div class="row" style="padding-top: 20px;">
+            <div class="col-md-9">
+                <section id="career" class="clearfix">
+                    <?=$this->list->TeamContenido?>
+                </section>
+            </div>
+            <div class="col-md-3" style="background-color: gainsboro">
+                <?=$this->list->TeamInfo?>
+            </div>
+        </div>
+    </section>
+
+</div>

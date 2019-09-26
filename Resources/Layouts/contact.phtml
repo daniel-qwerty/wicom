@@ -1,0 +1,292 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description"
+        content="Película que retrata nuestra sociedad, la realidad de las mujeres en Bolivia, la vida en nuestros barrios y la corrupción en algunas esferas.">
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
+    <title><?= Configurations_Helper_Configuration::getInstance()->getKey('PAGE_TITLE'); ?></title>
+
+
+    <link rel="apple-touch-icon" sizes="180x180"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-32x32.png" sizes="32x32">
+    <link rel="icon" type="image/png"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon-16x16.png" sizes="16x16">
+    <link rel="manifest" href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/manifest.json">
+    <link rel="mask-icon"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/safari-pinned-tab.svg"
+        color="#5bbad5">
+    <link rel="shortcut icon"
+        href="<?PHP echo Com_Helper_Url::getInstance()->getImage(); ?>/Public/favicons/favicon.ico"
+        type="image/x-icon" />
+
+    <?PHP
+    Com_Helper_Style::getInstance()
+        ->addFile("Public/normalize.css")
+        ->addFile("Public/main.css")
+        ->addFile("Public/bootstrap.css")
+        ->addFile("Public/animate.min.css")
+        ->addFile("Public/font-awesome.css")
+        ->addFile("Public/owl.carousel.min.css")
+        ->addFile("Public/owl.theme.default.min.css")
+        ->addFile("Public/meanmenu.min.css")
+        ->addFile("Public/colorbox.css")
+        ->addFile("Public/preview.css")
+        ->addFile("Public/style.css")
+        ->addFile("Public/responsive.css")
+        ->addFile("Public/nivo-slider.css")
+        ->addFile("Public/magnific-popup.css")
+        ->addFile("Public/main.css")
+    ;
+
+
+    echo Com_Helper_Style::getInstance();
+
+
+    ?>
+
+</head>
+
+<body>
+    <div class="wrapper-area">
+        <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
+
+        <!-- Add your site or application content here -->
+        <!-- Header Area Start Here -->
+        <header>
+            <div class="header-style1-area">
+
+                <div class="main-header-area" id="sticker">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-lg-2 col-md-2 col-sm-2 col-xs-12">
+                                <div class="logo-area">
+                                    <a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/es"><img
+                                            class="img-responsive"
+                                            src="<?= Com_Helper_Url::getInstance()->getImage(); ?>/Public/logo-3.png"
+                                            alt="logo"></a>
+                                </div>
+                            </div>
+                            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-12">
+                                <div class="main-menu-area">
+                                    <nav>
+                                        <ul>
+                                            <?php Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area Start -->
+                <div class="mobile-menu-area">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="mobile-menu">
+                                    <nav id="dropdown">
+                                        <ul>
+                                            <?php Menu_Widget_Menu::getInstance()->setLan($this->lan)->setParent(1)->render(); ?>
+                                        </ul>
+                                    </nav>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Mobile Menu Area End -->
+            </div>
+        </header>
+        <!-- Header Area End Here -->
+        <div class="header-bennar-area">
+            <div class="overlay"></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-bennar-left">
+                            <h2><?= $this->page->PagName; ?></h2>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                        <div class="header-bennar-right">
+                            <ul>
+                                <li><a href="<?= Com_Helper_Url::getInstance()->urlBase; ?>/en">Home</a> /</li>
+                                <li><?= $this->page->PagName; ?></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Inner page Header Banner Area End Here -->
+        <!-- Page About Us Area Start Here -->
+        <div class="page-contact-us-area section-space-93-100">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
+                        <div class="page-contact-us-left">
+
+                            <ul style="margin-bottom: 50px">
+                                <li><i class="fa fa-map-marker" aria-hidden="true"></i>
+                                    <strong>En La Paz</strong> Calle A. Patiño Nro. 105 Edif. Torre Empresarial Titanium
+                                    Piso 7 Of. 704 Zona Calacoto</li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i>
+                                    (591-2) 2791050</li>
+                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i>
+                                    info@wicom.com.bo</li>
+                                <li><i class="fa fa-phone" aria-hidden="true"></i>
+                                    79506414</li>
+                            </ul>
+
+
+
+
+                        </div>
+                    </div>
+                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                        <div class="page-contact-us-right">
+                            <h3 class="section-sub-title ">
+                                <?= Texts_Helper_Text::getInstance()->get($this->lan, "contactTitleForm")->TxtDescription; ?>
+                            </h3>
+                            <div class="row">
+                                <div class="contact-form">
+                                    <form id='contact-form'>
+                                        <fieldset>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="text" placeholder="Nombre*" class="form-control"
+                                                        id="name" data-error="Name field is required" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-6">
+                                                <div class="form-group">
+                                                    <input type="email" placeholder="Email*" class="form-control"
+                                                        id="email" data-error="Email field is required" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea placeholder="Mensaje*" class="textarea form-control"
+                                                        id="message" rows="8" cols="20"
+                                                        data-error="Message field is required" required></textarea>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-4">
+                                                <div class="form-group margin-b-0">
+                                                    <button onclick="sendContact();" type="submit"
+                                                        class="btn-read-more-fill"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtEnviarMensaje")->TxtDescription; ?></button>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-8">
+                                                <div class='form-response'></div>
+                                            </div>
+                                        </fieldset>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Contact Us Page Area End Here -->
+        <!-- Google Map Integrate Start Here -->
+        <div class="container-fluid">
+            <div class="row">
+                <div class="google-map-area">
+                   
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3824.7030900803784!2d-68.0763168334961!3d-16.541080474853516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f21375ebd04bb%3A0x48971bb278d356c8!2sEdificio%20Torre%20Empresarial%20Titanium!5e0!3m2!1ses!2sbo!4v1569450310499!5m2!1ses!2sbo" width="100%" height="548" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
+                </div>
+            </div>
+        </div>
+        <!-- Google Map Integrate End Here -->
+
+        <!-- Footer Area Start Here -->
+        <?PHP Pages_Widget_Footer::getInstance()->render(); ?>
+        <!-- Footer Area End Here -->
+    </div>
+    <!-- Preloader Start Here -->
+    <div id="preloader"></div>
+
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY-QIuTVeYS1xZgHCZODcTuscHvGvK3hU"></script>
+
+    <?php
+Com_Helper_Script::getInstance()
+    ->addFile("Public/modernizr-2.8.3.min.js")
+    ->addFile("Public/jquery-1.12.0.min.js")
+    ->addFile("Public/bootstrap.min.js")
+    ->addFile("Public/owl.carousel.min.js")
+    ->addFile("Public/jquery.nivo.slider.js")
+    ->addFile("Public/home.js")
+    ->addFile("Public/jquery.meanmenu.min.js")
+    ->addFile("Public/wow.min.js")
+    ->addFile("Public/plugins.js")
+    ->addFile("Public/jquery.scrollUp.min.js")
+    ->addFile("Public/isotope.pkgd.js")
+    ->addFile("Public/jquery.counterup.min.js")
+    ->addFile("Public/waypoints.min.js")
+    ->addFile("Public/jquery.colorbox-min.js")
+    ->addFile("Public/main.js");
+
+echo Com_Helper_Script::getInstance();
+?>
+
+
+    <script type="text/javascript">
+    $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+    })
+
+    function sendContact() {
+        var name = $('#contact-form #name').val();
+        var message = $('#contact-form #message').val();
+        var email = $('#contact-form #email').val();
+
+
+        if (name === "" || email === "" || message === "") {
+            //swal("", "Los campos marcados con (*) son obligatorios", "warning");
+            console.log("Por favor revise los datos del formulario !!!");
+        } else {
+
+            $.ajax({
+                type: "POST",
+                url: "http://wicom.com.bo/beta/Service/Contact/Save",
+                data: {
+                    Name: name,
+                    Email: email,
+                    Phone: 0,
+                    Message: message
+                }
+            }).done(function(data) {
+                console.log("Exito");
+                // swal("", "Su mensaje fue enviado con exito", "success");
+                $('#contact-form #name').val("");
+                $('#contact-form #message').val("");
+                $('#contact-form #email').val("");
+
+            }).error(function(error) {
+                console.log(error);
+
+            });
+
+
+        }
+    }
+    </script>
+</body>
+
+
+
+
+
+</html>

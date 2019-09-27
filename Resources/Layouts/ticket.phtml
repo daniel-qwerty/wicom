@@ -3,8 +3,31 @@
 
 <head>
     <meta charset="utf-8">
-    <meta name="description"
-        content="Película que retrata nuestra sociedad, la realidad de las mujeres en Bolivia, la vida en nuestros barrios y la corrupción en algunas esferas.">
+     <!-- Google Authorship and Publisher Markup -->
+    <link rel="author" href="https://www.wicom.com.bo">
+    <link rel="publisher" href="https://www.wicom.com.bo"/>
+
+    <!-- Schema.org markup for Google+ -->
+    <meta itemprop="name" content="<?= $this->page->PagName; ?>">
+    <meta itemprop="description" content="<?= $this->page->PagDescription; ?>">
+    <meta itemprop="image" content="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $this->page->PagImage;?>">
+
+    <!-- Twitter Card data -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@publisher_handle">
+    <meta name="twitter:title" content="<?= $this->page->PagName; ?>">
+    <meta name="twitter:description" content="<?= $this->page->PagDescription; ?>">
+    <meta name="twitter:creator" content="@Wicom">
+    <!-- Imagen de sumario de Twitter debe al menos tener 280x150px -->
+    <meta name="twitter:image:src" content="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $this->page->PagImage;?>">
+
+    <!-- Open Graph data -->
+    <meta property="og:title" content="<?= $this->page->PagName; ?>" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://www.wicom.com.bo" />
+    <meta property="og:image" content="<?= Com_Helper_Url::getInstance()->getUploads(); ?>/Image/<?php echo $this->page->PagImage;?>" />
+    <meta property="og:description" content="<?= $this->page->PagDescription; ?>" />
+    <meta property="og:site_name" content="Wicom" />
     <meta name="viewport" content="width=device-width, initial-scale=1, minimal-ui">
     <title><?= Configurations_Helper_Configuration::getInstance()->getKey('PAGE_TITLE'); ?></title>
 
@@ -252,7 +275,7 @@ echo Com_Helper_Script::getInstance();
 
             $.ajax({
                 type: "POST",
-                url: "http://localhost/wicom/Service/Ticket/Save",
+                url: "http://wicom.com.bo/Service/Ticket/Save",
                 data: {
                     Name: name,
                     Email: email,

@@ -1,0 +1,38 @@
+<?PHP
+$report = new Com_Wizard_Report();
+$report->title = "Listado de Tickets";
+$report->open();
+?>
+<table>
+    <tr class="cabecera">
+        <td>Nro.</td>
+        <td>Fecha</td>
+        <td>Idioma</td>
+        <td>Nombre</td>
+        <td>Correo Electronico</td>
+        <td>Serial</td>
+        <td>Resume</td>
+        <td>Action</td>
+        <td>Status</td>
+    </tr>
+    <?PHP
+    foreach ($this->list as $index => $obj) {
+        ?>
+        <tr class="<?PHP echo ($index % 2 == 0 ? 'blanco' : 'gris'); ?>">
+            <td><?PHP echo ($index + 1); ?></td>
+            td><?PHP echo $obj->TikDate; ?></td>
+            <td><?PHP echo $obj->LanName; ?></td>
+            <td><?PHP echo $obj->TikName; ?></td>
+            <td><?PHP echo $obj->TikEmail; ?></td>
+            <td><?PHP echo $obj->TikSerial; ?></td>
+            <td><?PHP echo $obj->TikResume; ?></td>
+            <td><?PHP echo $obj->TikAction; ?></td>
+            <td><?PHP echo $obj->TikStatus; ?></td>
+        </tr>
+        <?PHP
+    }
+    ?>
+</table>
+<?PHP
+$report->close();
+?>

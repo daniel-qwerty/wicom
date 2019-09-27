@@ -19,11 +19,18 @@ define("FILE_PREFIX", "");
 /**
  * Database Configuration Parameters
  */
-define("DATABASE_SERVER", "localhost");
+/*define("DATABASE_SERVER", "localhost");
 define("DATABASE_PORT", "3306");
 define("DATABASE_NAME", "wicomcom_web");
 define("DATABASE_USERNAME", "wicomcom_web");
 define("DATABASE_PASSWORD", "web.wicom.123.");
+define("DATABASE_PREFIX", "");*/
+
+define("DATABASE_SERVER", "localhost");
+define("DATABASE_PORT", "3306");
+define("DATABASE_NAME", "wicom");
+define("DATABASE_USERNAME", "root");
+define("DATABASE_PASSWORD", "");
 define("DATABASE_PREFIX", "");
 
 /**

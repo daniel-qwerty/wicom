@@ -130,30 +130,11 @@
         <div class="page-contact-us-area section-space-93-100">
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-5 col-md-5 col-sm-5 col-xs-12">
-                        <div class="page-contact-us-left">
-
-                            <ul style="margin-bottom: 50px">
-                                <li><i class="fa fa-map-marker" aria-hidden="true"></i>
-                                    <strong>En La Paz</strong> Calle A. Patiño Nro. 105 Edif. Torre Empresarial Titanium
-                                    Piso 7 Of. 704 Zona Calacoto</li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i>
-                                    (591-2) 2791050</li>
-                                <li><i class="fa fa-envelope-o" aria-hidden="true"></i>
-                                    info@wicom.com.bo</li>
-                                <li><i class="fa fa-phone" aria-hidden="true"></i>
-                                    79506414</li>
-                            </ul>
-
-
-
-
-                        </div>
-                    </div>
-                    <div class="col-lg-7 col-md-7 col-sm-7 col-xs-12">
+                    
+                    <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                         <div class="page-contact-us-right">
                             <h3 class="section-sub-title ">
-                                <?= Texts_Helper_Text::getInstance()->get($this->lan, "contactTitleForm")->TxtDescription; ?>
+                                Genere su ticket de soporte técnico
                             </h3>
                             <div class="row">
                                 <div class="contact-form">
@@ -175,19 +156,34 @@
                                             </div>
                                             <div class="col-sm-12">
                                                 <div class="form-group">
-                                                    <textarea placeholder="Mensaje*" class="textarea form-control"
-                                                        id="message" rows="8" cols="20"
+                                                    <input type="text" placeholder="Serial*" class="form-control"
+                                                        id="serial" data-error="Name field is required" required>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                             <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea placeholder="Resumen*" class="textarea form-control"
+                                                        id="resume" rows="8" cols="20"
+                                                        data-error="Message field is required" required></textarea>
+                                                    <div class="help-block with-errors"></div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <div class="form-group">
+                                                    <textarea placeholder="Acciones Tomadas*" class="textarea form-control"
+                                                        id="action" rows="8" cols="20"
                                                         data-error="Message field is required" required></textarea>
                                                     <div class="help-block with-errors"></div>
                                                 </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <div class="form-group margin-b-0">
-                                                    <a class="btn-read-more-fill" href="#" onclick="sendContact();"><?= Texts_Helper_Text::getInstance()->get($this->lan, "txtEnviarMensaje")->TxtDescription; ?></a>
+                                                        <a class="btn-read-more-fill" href="#" onclick="sendContact();">Generar Ticket</a>
                                                 </div>
                                             </div>
                                             <div class="col-sm-8">
-                                                <div class='form-response'></div>
+                                                
                                             </div>
                                         </fieldset>
                                     </form>
@@ -200,14 +196,7 @@
         </div>
         <!-- Contact Us Page Area End Here -->
         <!-- Google Map Integrate Start Here -->
-        <div class="container-fluid">
-            <div class="row">
-                <div class="google-map-area">
-                   
-                    <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3824.7030900803784!2d-68.0763168334961!3d-16.541080474853516!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x915f21375ebd04bb%3A0x48971bb278d356c8!2sEdificio%20Torre%20Empresarial%20Titanium!5e0!3m2!1ses!2sbo!4v1569450310499!5m2!1ses!2sbo" width="100%" height="548" frameborder="0" style="border:0;" allowfullscreen=""></iframe>
-                </div>
-            </div>
-        </div>
+        
         <!-- Google Map Integrate End Here -->
 
         <!-- Footer Area Start Here -->
@@ -217,7 +206,7 @@
     <!-- Preloader Start Here -->
     <div id="preloader"></div>
 
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCY-QIuTVeYS1xZgHCZODcTuscHvGvK3hU"></script>
+    
 
     <?php
 Com_Helper_Script::getInstance()
@@ -250,25 +239,31 @@ echo Com_Helper_Script::getInstance();
         var name = $('#contact-form #name').val();
         var message = $('#contact-form #message').val();
         var email = $('#contact-form #email').val();
+        var serial = $('#contact-form #serial').val();
+        var resume = $('#contact-form #resume').val();
+        var action = $('#contact-form #action').val();
 
 
-        if (name === "" || email === "" || message === "") {
+        if (name === "" || email === "" || message === "" || serial === "" || action === "" || resume === "") {
             //swal("", "Los campos marcados con (*) son obligatorios", "warning");
-            console.log("Por favor revise los datos del formulario !!!");
+            console.log("Todos los campos del  formulario son obligatorios");
             alert("Todos los campos del  formulario son obligatorios");
         } else {
 
             $.ajax({
                 type: "POST",
-                url: "http://wicom.com.bo/beta/Service/Contact/Save",
+                url: "http://localhost/wicom/Service/Ticket/Save",
                 data: {
                     Name: name,
                     Email: email,
-                    Message: message
+                    Serial: serial,
+                    Resume: resume,
+                    Action: action
                 }
             }).done(function(data) {
+               
                 console.log("Exito");
-                alert("Su mensaje fue enviado con exito");
+                alert("Se genero su ticket de soporte exitosamente, en breve nos contactaremos con usted");
                 // swal("", "Su mensaje fue enviado con exito", "success");
                 $('#contact-form #name').val("");
                 $('#contact-form #message').val("");

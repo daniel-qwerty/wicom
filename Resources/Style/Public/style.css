@@ -1350,7 +1350,7 @@ ul {
   top: 0px;
   z-index: 999999;
   width: 100%;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(5, 43, 90, 0.80);
   margin: 0;
   border-bottom: 2px solid rgba(0, 43, 90, 0.8);
 }
@@ -1364,6 +1364,7 @@ ul {
   -ms-transition: all 0.5s ease-out;
   -o-transition: all 0.5s ease-out;
   transition: all 0.5s ease-out;
+
 }
 .stick .cart-area {
   padding: 19px 0;
@@ -1396,8 +1397,8 @@ ul {
   top: 66px;
 }
 .header-style3-area .stick {
-  background: rgba(0, 43, 90, 0.9);
-  padding: 0 30px;
+  background: rgba(0, 43, 90, 0.9) !important;
+  padding: 0 30px !important;
 }
 .header-style3-area .stick .cart-area > ul {
   top: 66px;
